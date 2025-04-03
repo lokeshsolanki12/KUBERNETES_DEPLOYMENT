@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microservice-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: microservice-app
+  template:
+    metadata:
+      labels:
+        app: microservice-app
+    spec:
+      containers:
+      - name: microservice-app
+        image: lokeshsolanki12/microservice-app:latest  # Apni image ka naam sahi se likho
+        ports:
+        - containerPort: 5000
